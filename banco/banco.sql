@@ -22,6 +22,8 @@ USE `gpsaca`;
 CREATE TABLE IF NOT EXISTS `gpsaca`.`equipe` (
   `equipe_id` INT NOT NULL AUTO_INCREMENT,
   `equipe_nome` VARCHAR(255) NOT NULL,
+  `equipe_email` VARCHAR(255) NOT NULL,
+  `equipe_senha` VARCHAR(255) NOT NULL,
   `equipe_formacao` VARCHAR(255) NULL DEFAULT NULL,
   `equipe_area_atuacao` VARCHAR(255) NULL DEFAULT NULL,
   `equipe_lattes` VARCHAR(500) NULL DEFAULT NULL,
