@@ -63,7 +63,7 @@ function inserirEquipe($conexao, $nome, $email, $senha, $formacao, $area_atuacao
     $sql = "INSERT INTO equipe (equipe_nome, equipe_email, equipe_senha, equipe_formacao, equipe_area_atuacao, equipe_lattes, equipe_orcid, equipe_researchgate, equipe_publons, equipe_google_academico, equipe_cidade, equipe_categoria, equipe_tipo)
      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     $comando = mysqli_prepare($conexao, $sql);
-    mysqli_stmt_bind_param($comando, "ssssssssssii", $nome, $email, $senha, $formacao, $area_atuacao, $lattes, $orcid, $researchgate, $publons, $googleAcademic, $cidade, $categoria, $tipo);
+    mysqli_stmt_bind_param($comando, "ssssssssssiii", $nome, $email, $senha, $formacao, $area_atuacao, $lattes, $orcid, $researchgate, $publons, $googleAcademic, $cidade, $categoria, $tipo);
     if (mysqli_stmt_execute($comando)) {
         mysqli_stmt_close($comando);
         return true;

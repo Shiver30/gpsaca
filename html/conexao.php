@@ -10,6 +10,4 @@
         die("Erro na conexão: " . $conexao->connect_error);
     }
 
-    // echo "Conctado com sucesso";
 
-?> 

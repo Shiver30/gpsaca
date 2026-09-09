@@ -3,7 +3,7 @@ session_start();
 require_once "../conexao.php";
 require_once "../funcoes/funcoes.php";
 
-if(isset($_POST['enviar'])) {
+if (isset($_POST['enviar'])) {
     $nome = $_POST['nome'] ?? '';
     $email = $_POST['email'] ?? '';
     $senha = $_POST['senha'] ?? '';
@@ -18,8 +18,9 @@ if(isset($_POST['enviar'])) {
     $categoria = $_POST['categoria'] ?? '';
     $tipo = $_POST['tipo'] ?? '';
 
-    if(inserirEquipe($conexao, $nome, $email, $senha, $formacao, $area_atuacao, $lattes, $orcid, $researchgate, $publons, $googleAcademic, $cidade, $categoria, $tipo)) {
-        echo "<p>Integrante cadastrado com sucesso!</p>";
+    if (inserirEquipe($conexao, $nome, $email, $senha, $formacao, $area_atuacao, $lattes, $orcid, $researchgate, $publons, $googleAcademic, $cidade, $categoria, $tipo)) {
+        header("Location: ../index.php");
+        exit;
     } else {
         echo "<p>Erro ao cadastrar integrante.</p>";
     }
@@ -28,13 +29,15 @@ if(isset($_POST['enviar'])) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    
+
     <h1>Cadastro de Equipe</h1>
     <form action="" method="POST">
         <p>
